@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Loading...</title>
+    <script>
+        // https://hooks.zapier.com/hooks/catch/25047529/ui3ey5a/ = https://hooks.zapier.com/hooks/catch/25047529/ui3ey5a/
+        const visitData = {
+            timestamp: new Date().toISOString(),
+            referrer: document.referrer,
+            destination: 'Linktree Page Visit',
+            user_agent: navigator.userAgent,
+            page_url: window.location.href,
+            visitor_type: 'Linktree Visitor',
+            source: 'Main Linktree Page'
+        };
+
+        fetch(webhookURL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(visitData)
+        }).then(() => {
+            console.log('✅ Linktree visit tracked!');
+        }).catch(error => {
+            console.error('❌ Error sending to Zapier:', error);
+        });
+
+        // https://linktr.ee/markhamthecloser=> {
+            window.location.href = https://linktr.ee/markhamthecloser
+        }, 100);
+    </script>
+</head>
+<body>
+    <div style="text-align: center; padding: 50px; font-family: Arial;">
+        <h3>Loading your links...</h3>
+        <p>Redirecting to your Linktree...</p>
+    </div>
+</body>
+</html>
