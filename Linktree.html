@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Loading...</title>
     <script>
-        // https://hooks.zapier.com/hooks/catch/25047529/ui3ey5a/ = https://hooks.zapier.com/hooks/catch/25047529/ui3ey5a/
+        const webhookURL = 'https://hooks.zapier.com/hooks/catch/25047529/ui3ey5a/';
+
         const visitData = {
             timestamp: new Date().toISOString(),
             referrer: document.referrer,
@@ -19,14 +20,12 @@
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(visitData)
-        }).then(() => {
-            console.log('✅ Linktree visit tracked!');
-        }).catch(error => {
-            console.error('❌ Error sending to Zapier:', error);
-        });
+        })
+        .then(() => console.log('✅ Linktree visit tracked!'))
+        .catch(error => console.error('❌ Error sending to Zapier:', error));
 
-        // https://linktr.ee/markhamthecloser=> {
-            window.location.href = https://linktr.ee/markhamthecloser
+        setTimeout(() => {
+            window.location.href = 'https://linktr.ee/markhamthecloser';
         }, 100);
     </script>
 </head>
